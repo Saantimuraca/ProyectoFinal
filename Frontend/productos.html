@@ -11,10 +11,10 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="container nav-inner">
+  <nav class="barra-nav">
+    <div class="contenedor nav-interno">
       <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon">⚡</div>
+        <div class="nav-logo-icono">⚡</div>
         NextStep Tech
       </a>
 
@@ -23,94 +23,94 @@
       </button>
 
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html"     class="nav-link">Inicio</a></li>
-        <li><a href="productos.html" class="nav-link">Productos</a></li>
-        <li><a href="productos.html" class="nav-link">Ofertas</a></li>
-        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+        <li><a href="index.html"     class="nav-enlace">Inicio</a></li>
+        <li><a href="productos.html" class="nav-enlace">Productos</a></li>
+        <li><a href="productos.html" class="nav-enlace">Ofertas</a></li>
+        <li><a href="index.html#contacto" class="nav-enlace">Contacto</a></li>
       </ul>
 
-      <div class="nav-actions">
-        <button class="nav-icon-btn" id="cart-open-btn" aria-label="Carrito">
+      <div class="nav-acciones">
+        <button class="nav-btn-icono" id="carrito-btn-abrir" aria-label="Carrito">
           🛒
-          <span class="cart-badge" style="display:none">0</span>
+          <span class="carrito-badge" style="display:none">0</span>
         </button>
-        <div class="user-menu-wrap" id="user-menu-wrap">
-          <button class="nav-icon-btn" id="user-menu-btn" aria-label="Usuario" aria-haspopup="true" aria-expanded="false">👤</button>
-          <div class="user-menu" id="user-menu" hidden></div>
+        <div class="menu-usuario-contenedor" id="menu-usuario-contenedor">
+          <button class="nav-btn-icono" id="menu-usuario-btn" aria-label="Usuario" aria-haspopup="true" aria-expanded="false">👤</button>
+          <div class="menu-usuario" id="menu-usuario" hidden></div>
         </div>
       </div>
     </div>
   </nav>
 
-  <section class="page-hero">
-    <div class="container">
-      <div class="page-hero-title fade-up">Catálogo de productos</div>
-      <p class="page-hero-sub fade-up">Explorá nuestra selección de tecnología de última generación</p>
+  <section class="hero-pagina">
+    <div class="contenedor">
+      <div class="hero-pagina-titulo subir-fade">Catálogo de productos</div>
+      <p class="hero-pagina-subtitulo subir-fade">Explorá nuestra selección de tecnología de última generación</p>
     </div>
   </section>
 
-  <div class="container products-layout">
+  <div class="contenedor layout-productos">
 
-    <aside class="filters-panel">
-      <div class="filters-title">
+    <aside class="panel-filtros">
+      <div class="filtros-titulo">
         Filtros
-        <button class="filters-reset" id="filters-reset">Limpiar</button>
+        <button class="filtros-limpiar" id="filtros-limpiar">Limpiar</button>
       </div>
 
-      <div class="filter-group">
-        <div class="filter-group-title">Buscar</div>
-        <div class="search-input-wrap">
+      <div class="grupo-filtro">
+        <div class="grupo-filtro-titulo">Buscar</div>
+        <div class="busqueda-input-contenedor">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           <input
             type="search"
-            class="filter-search"
-            id="filter-search"
+            class="filtro-busqueda"
+            id="filtro-busqueda"
             placeholder="Ej: iPhone, MacBook…"
             autocomplete="off"
           />
         </div>
       </div>
 
-      <div class="filter-group">
-        <div class="filter-group-title">Categoría</div>
-        <div class="cat-chips">
-          <div class="cat-chip active" data-cat="todos">
+      <div class="grupo-filtro">
+        <div class="grupo-filtro-titulo">Categoría</div>
+        <div class="chips-categoria">
+          <div class="chip-categoria activo" data-cat="todos">
             Todos
-            <span class="cat-chip-count">16</span>
+            <span class="chip-categoria-cantidad">16</span>
           </div>
-          <div class="cat-chip" data-cat="celulares">
+          <div class="chip-categoria" data-cat="celulares">
             📱 Celulares
-            <span class="cat-chip-count">4</span>
+            <span class="chip-categoria-cantidad">4</span>
           </div>
-          <div class="cat-chip" data-cat="notebooks">
+          <div class="chip-categoria" data-cat="notebooks">
             💻 Notebooks
-            <span class="cat-chip-count">3</span>
+            <span class="chip-categoria-cantidad">3</span>
           </div>
-          <div class="cat-chip" data-cat="accesorios">
+          <div class="chip-categoria" data-cat="accesorios">
             🎧 Accesorios
-            <span class="cat-chip-count">4</span>
+            <span class="chip-categoria-cantidad">4</span>
           </div>
-          <div class="cat-chip" data-cat="gaming">
+          <div class="chip-categoria" data-cat="gaming">
             🎮 Gaming
-            <span class="cat-chip-count">3</span>
+            <span class="chip-categoria-cantidad">3</span>
           </div>
-          <div class="cat-chip" data-cat="tablets">
+          <div class="chip-categoria" data-cat="tablets">
             📲 Tablets
-            <span class="cat-chip-count">2</span>
+            <span class="chip-categoria-cantidad">2</span>
           </div>
         </div>
       </div>
 
-      <div class="filter-group">
-        <div class="filter-group-title">Precio máximo</div>
-        <div class="price-slider-wrap">
-          <div class="price-range-display">
-            Hasta <span id="price-display">$2,500</span>
+      <div class="grupo-filtro">
+        <div class="grupo-filtro-titulo">Precio máximo</div>
+        <div class="slider-precio-contenedor">
+          <div class="precio-rango-display">
+            Hasta <span id="precio-display">$2,500</span>
           </div>
           <input
             type="range"
-            class="range-input"
-            id="price-range"
+            class="input-rango"
+            id="precio-rango"
             min="50"
             max="2500"
             step="50"
@@ -119,55 +119,55 @@
         </div>
       </div>
 
-      <div class="filter-group">
-        <div class="filter-group-title">Ordenar por</div>
-        <select class="sort-select" id="sort-select">
+      <div class="grupo-filtro">
+        <div class="grupo-filtro-titulo">Ordenar por</div>
+        <select class="select-orden" id="select-orden">
           <option value="default">Relevancia</option>
-          <option value="price-asc">Precio: menor a mayor</option>
-          <option value="price-desc">Precio: mayor a menor</option>
-          <option value="rating">Mejor puntuados</option>
+          <option value="precio-asc">Precio: menor a mayor</option>
+          <option value="precio-desc">Precio: mayor a menor</option>
+          <option value="calificacion">Mejor puntuados</option>
         </select>
       </div>
     </aside>
 
-    <main class="products-main">
-      <div class="products-topbar">
-        <span class="products-count" id="products-count">
+    <main class="productos-principal">
+      <div class="productos-barra-superior">
+        <span class="productos-cantidad" id="productos-cantidad">
           <strong>16</strong> productos encontrados
         </span>
-        <div class="view-toggle">
-          <button class="view-btn active" data-view="grid" title="Vista en grilla">⊞</button>
-          <button class="view-btn" data-view="list" title="Vista en lista">☰</button>
+        <div class="toggle-vista">
+          <button class="btn-vista activo" data-vista="grilla" title="Vista en grilla">⊞</button>
+          <button class="btn-vista" data-vista="lista" title="Vista en lista">☰</button>
         </div>
       </div>
 
-      <div class="products-grid stagger-children" id="products-grid">
+      <div class="grilla-productos hijos-escalonados" id="grilla-productos">
         <!-- Populated by JS -->
       </div>
     </main>
   </div>
 
-  <footer class="footer" id="contacto">
-    <div class="container">
-      <div class="footer-grid">
+  <footer class="pie-pagina" id="contacto">
+    <div class="contenedor">
+      <div class="pie-grilla">
 
-        <div class="footer-brand">
+        <div class="pie-marca">
           <a href="index.html" class="nav-logo" style="font-size:1rem;">
-            <div class="nav-logo-icon" style="width:28px;height:28px;font-size:.8rem;">⚡</div>
+            <div class="nav-logo-icono" style="width:28px;height:28px;font-size:.8rem;">⚡</div>
             NextStep Tech
           </a>
           <p>Tu tienda de tecnología de confianza. Los mejores productos, al mejor precio, con la mejor experiencia de compra.</p>
-          <div class="social-links">
-            <a href="#" class="social-btn" aria-label="Instagram">📸</a>
-            <a href="#" class="social-btn" aria-label="Twitter">🐦</a>
-            <a href="#" class="social-btn" aria-label="Facebook">👥</a>
-            <a href="#" class="social-btn" aria-label="YouTube">▶️</a>
+          <div class="enlaces-sociales">
+            <a href="#" class="btn-social" aria-label="Instagram">📸</a>
+            <a href="#" class="btn-social" aria-label="Twitter">🐦</a>
+            <a href="#" class="btn-social" aria-label="Facebook">👥</a>
+            <a href="#" class="btn-social" aria-label="YouTube">▶️</a>
           </div>
         </div>
 
         <div>
-          <div class="footer-col-title">Tienda</div>
-          <div class="footer-links">
+          <div class="pie-col-titulo">Tienda</div>
+          <div class="pie-enlaces">
             <a href="productos.html">Todos los productos</a>
             <a href="productos.html">Celulares</a>
             <a href="productos.html">Notebooks</a>
@@ -177,8 +177,8 @@
         </div>
 
         <div>
-          <div class="footer-col-title">Empresa</div>
-          <div class="footer-links">
+          <div class="pie-col-titulo">Empresa</div>
+          <div class="pie-enlaces">
             <a href="#">Sobre nosotros</a>
             <a href="#">Blog tech</a>
             <a href="#">Trabaja con nosotros</a>
@@ -187,8 +187,8 @@
         </div>
 
         <div>
-          <div class="footer-col-title">Soporte</div>
-          <div class="footer-links">
+          <div class="pie-col-titulo">Soporte</div>
+          <div class="pie-enlaces">
             <a href="#">Centro de ayuda</a>
             <a href="#">Seguimiento de pedido</a>
             <a href="#">Devoluciones</a>
@@ -201,9 +201,9 @@
 
       </div>
 
-      <div class="footer-bottom">
+      <div class="pie-inferior">
         <p>© 2026 NextStep Tech. Todos los derechos reservados.</p>
-        <div class="footer-bottom-links">
+        <div class="pie-inferior-enlaces">
           <a href="#">Privacidad</a>
           <a href="#">Términos</a>
           <a href="#">Cookies</a>
@@ -212,30 +212,30 @@
     </div>
   </footer>
 
-  <div class="cart-overlay" id="cart-overlay"></div>
-  <aside class="cart-drawer" id="cart-drawer" aria-label="Carrito">
-    <div class="cart-drawer-header">
-      <div class="cart-drawer-title">🛒 Mi carrito</div>
-      <button class="cart-close" id="cart-close-btn">✕</button>
+  <div class="carrito-overlay" id="carrito-overlay"></div>
+  <aside class="carrito-panel" id="carrito-panel" aria-label="Carrito">
+    <div class="carrito-panel-encabezado">
+      <div class="carrito-panel-titulo">🛒 Mi carrito</div>
+      <button class="carrito-cerrar" id="carrito-btn-cerrar">✕</button>
     </div>
-    <div class="cart-items" id="cart-items">
-      <div class="cart-empty">
-        <span class="cart-empty-icon">🛒</span>
+    <div class="carrito-items" id="carrito-items">
+      <div class="carrito-vacio">
+        <span class="carrito-vacio-icono">🛒</span>
         <p>Tu carrito está vacío</p>
       </div>
     </div>
-    <div class="cart-footer">
-      <div class="cart-total">
-        <span class="cart-total-label">Total</span>
-        <span class="cart-total-value" id="cart-total-value">$0</span>
+    <div class="carrito-pie">
+      <div class="carrito-total">
+        <span class="carrito-total-etiqueta">Total</span>
+        <span class="carrito-total-valor" id="carrito-total-valor">$0</span>
       </div>
-      <button class="btn btn-primary btn-checkout" onclick="showToast('¡Redirigiendo al checkout! 🎉', '🚀')">
+      <button class="btn btn-primario btn-checkout">
         Finalizar compra →
       </button>
     </div>
   </aside>
 
-  <div class="toast-container" id="toast-container"></div>
+  <div class="contenedor-toast" id="contenedor-toast"></div>
 
   <script src="../Backend/app.js"></script>
 </body>

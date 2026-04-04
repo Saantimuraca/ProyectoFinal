@@ -11,10 +11,10 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="container nav-inner">
+  <nav class="barra-nav">
+    <div class="contenedor nav-interno">
       <a href="index.html" class="nav-logo">
-        <div class="nav-logo-icon">⚡</div>
+        <div class="nav-logo-icono">⚡</div>
         NextStep
       </a>
 
@@ -23,50 +23,50 @@
       </button>
 
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html"    class="nav-link">Inicio</a></li>
-        <li><a href="productos.html" class="nav-link">Productos</a></li>
-        <li><a href="productos.html" class="nav-link">Ofertas</a></li>
-        <li><a href="#contacto"     class="nav-link">Contacto</a></li>
+        <li><a href="index.html"    class="nav-enlace">Inicio</a></li>
+        <li><a href="productos.html" class="nav-enlace">Productos</a></li>
+        <li><a href="productos.html" class="nav-enlace">Ofertas</a></li>
+        <li><a href="#contacto"     class="nav-enlace">Contacto</a></li>
       </ul>
 
-      <div class="nav-actions">
-        <button class="nav-icon-btn" id="cart-open-btn" aria-label="Carrito">
+      <div class="nav-acciones">
+        <button class="nav-btn-icono" id="carrito-btn-abrir" aria-label="Carrito">
           🛒
-          <span class="cart-badge" style="display:none">0</span>
+          <span class="carrito-badge" style="display:none">0</span>
         </button>
-        <div class="user-menu-wrap" id="user-menu-wrap">
-          <button class="nav-icon-btn" id="user-menu-btn" aria-label="Usuario" aria-haspopup="true" aria-expanded="false">👤</button>
-          <div class="user-menu" id="user-menu" hidden></div>
+        <div class="menu-usuario-contenedor" id="menu-usuario-contenedor">
+          <button class="nav-btn-icono" id="menu-usuario-btn" aria-label="Usuario" aria-haspopup="true" aria-expanded="false">👤</button>
+          <div class="menu-usuario" id="menu-usuario" hidden></div>
         </div>
       </div>
     </div>
   </nav>
 
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
+    <div class="hero-fondo"></div>
+    <div class="hero-grilla"></div>
 
-    <div class="container" style="position:relative; z-index:2;">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
+    <div class="contenedor" style="position:relative; z-index:2;">
+      <div class="hero-contenido">
+        <div class="hero-etiqueta">
+          <span class="hero-etiqueta-punto"></span>
           Nuevos lanzamientos 2026
         </div>
 
-        <h1 class="hero-title">
+        <h1 class="hero-titulo">
           Tecnología que<br>
-          <span class="hero-title-accent">impulsa tu futuro</span>
+          <span class="hero-titulo-acento">impulsa tu futuro</span>
         </h1>
 
-        <p class="hero-sub">
+        <p class="hero-subtitulo">
           Descubrí los últimos gadgets, notebooks y accesorios de las marcas líderes. Precio justo, entrega rápida y garantía oficial.
         </p>
 
-        <div class="hero-ctas">
-          <button class="btn btn-primary" id="hero-cta">
+        <div class="hero-botones">
+          <button class="btn btn-primario" id="hero-cta">
             Ver productos →
           </button>
-          <a href="#categorias" class="btn btn-ghost">
+          <a href="#categorias" class="btn btn-fantasma">
             Explorar categorías
           </a>
         </div>
@@ -74,127 +74,127 @@
     </div>
 
     <div class="hero-visual">
-      <div class="hero-visual-inner">
-        <div class="device-card" data-product-id="3">
-          <div class="device-card-img"><span class="device-card-fallback">💻</span></div>
-          <div class="device-card-name">MacBook Pro M3</div>
-          <div class="device-card-price">$1,999 USD</div>
+      <div class="hero-visual-interno">
+        <div class="tarjeta-dispositivo" data-producto-id="3">
+          <div class="tarjeta-dispositivo-img"><span class="tarjeta-dispositivo-fallback">💻</span></div>
+          <div class="tarjeta-dispositivo-nombre">MacBook Pro M3</div>
+          <div class="tarjeta-dispositivo-precio">$1,999 USD</div>
         </div>
-        <div class="device-card" data-product-id="1">
-          <div class="device-card-img"><span class="device-card-fallback">📱</span></div>
-          <div class="device-card-name">iPhone 15 Pro Máx</div>
-          <div class="device-card-price">$1,499 USD</div>
+        <div class="tarjeta-dispositivo" data-producto-id="1">
+          <div class="tarjeta-dispositivo-img"><span class="tarjeta-dispositivo-fallback">📱</span></div>
+          <div class="tarjeta-dispositivo-nombre">iPhone 15 Pro Máx</div>
+          <div class="tarjeta-dispositivo-precio">$1,499 USD</div>
         </div>
-        <div class="device-card" data-product-id="9">
-          <div class="device-card-img"><span class="device-card-fallback">🎮</span></div>
-          <div class="device-card-name">Nintendo Switch OLED</div>
-          <div class="device-card-price">$499 USD</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding: 32px 0; background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-    <div class="container">
-      <div class="benefits-grid stagger-children">
-        <div class="benefit-card">
-          <div class="benefit-icon">🚀</div>
-          <div>
-            <div class="benefit-title">Envío express</div>
-            <div class="benefit-desc">Recibí tu pedido en 24–48 hs en todo el país.</div>
-          </div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">🛡️</div>
-          <div>
-            <div class="benefit-title">Garantía oficial</div>
-            <div class="benefit-desc">12 meses de garantía en todos los productos.</div>
-          </div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">💳</div>
-          <div>
-            <div class="benefit-title">Pagos seguros</div>
-            <div class="benefit-desc">Tarjeta, transferencia o MercadoPago. 100% seguro.</div>
-          </div>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">🎧</div>
-          <div>
-            <div class="benefit-title">Soporte 24/7</div>
-            <div class="benefit-desc">Equipo de expertos siempre disponible para ayudarte.</div>
-          </div>
+        <div class="tarjeta-dispositivo" data-producto-id="9">
+          <div class="tarjeta-dispositivo-img"><span class="tarjeta-dispositivo-fallback">🎮</span></div>
+          <div class="tarjeta-dispositivo-nombre">Nintendo Switch OLED</div>
+          <div class="tarjeta-dispositivo-precio">$499 USD</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="destacados">
-    <div class="container">
-      <div class="section-header fade-up">
+  <section style="padding: 32px 0; background: var(--fondo2); border-top: 1px solid var(--borde); border-bottom: 1px solid var(--borde);">
+    <div class="contenedor">
+      <div class="grilla-beneficios hijos-escalonados">
+        <div class="tarjeta-beneficio">
+          <div class="beneficio-icono">🚀</div>
+          <div>
+            <div class="beneficio-titulo">Envío express</div>
+            <div class="beneficio-descripcion">Recibí tu pedido en 24–48 hs en todo el país.</div>
+          </div>
+        </div>
+        <div class="tarjeta-beneficio">
+          <div class="beneficio-icono">🛡️</div>
+          <div>
+            <div class="beneficio-titulo">Garantía oficial</div>
+            <div class="beneficio-descripcion">12 meses de garantía en todos los productos.</div>
+          </div>
+        </div>
+        <div class="tarjeta-beneficio">
+          <div class="beneficio-icono">💳</div>
+          <div>
+            <div class="beneficio-titulo">Pagos seguros</div>
+            <div class="beneficio-descripcion">Tarjeta, transferencia o MercadoPago. 100% seguro.</div>
+          </div>
+        </div>
+        <div class="tarjeta-beneficio">
+          <div class="beneficio-icono">🎧</div>
+          <div>
+            <div class="beneficio-titulo">Soporte 24/7</div>
+            <div class="beneficio-descripcion">Equipo de expertos siempre disponible para ayudarte.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="destacados">
+    <div class="contenedor">
+      <div class="seccion-encabezado subir-fade">
         <div>
-          <span class="section-label">Lo más vendido</span>
-          <h2 class="section-title">Productos destacados</h2>
-          <p class="section-sub">Los favoritos de nuestra comunidad, seleccionados por calidad y precio.</p>
+          <span class="seccion-etiqueta">Lo más vendido</span>
+          <h2 class="seccion-titulo">Productos destacados</h2>
+          <p class="seccion-subtitulo">Los favoritos de nuestra comunidad, seleccionados por calidad y precio.</p>
         </div>
-        <a href="productos.html" class="btn btn-ghost btn-sm">Ver todos →</a>
+        <a href="productos.html" class="btn btn-fantasma btn-sm">Ver todos →</a>
       </div>
 
-      <div class="products-grid stagger-children" id="featured-grid">
+      <div class="grilla-productos hijos-escalonados" id="grilla-destacados">
         <!-- Populated by JS -->
       </div>
     </div>
   </section>
 
-  <section class="section" id="categorias" style="background: var(--bg2); border-top: 1px solid var(--border);">
-    <div class="container">
-      <div class="section-header fade-up">
+  <section class="seccion" id="categorias" style="background: var(--fondo2); border-top: 1px solid var(--borde);">
+    <div class="contenedor">
+      <div class="seccion-encabezado subir-fade">
         <div>
-          <span class="section-label">Explorar</span>
-          <h2 class="section-title">Categorías</h2>
-          <p class="section-sub">Encontrá exactamente lo que buscás.</p>
+          <span class="seccion-etiqueta">Explorar</span>
+          <h2 class="seccion-titulo">Categorías</h2>
+          <p class="seccion-subtitulo">Encontrá exactamente lo que buscás.</p>
         </div>
       </div>
 
-      <div class="cats-grid stagger-children">
-        <div class="cat-card" data-cat="celulares">
-          <div class="cat-icon blue">📱</div>
-          <div class="cat-name">Celulares</div>
-          <div class="cat-count">4 productos</div>
+      <div class="grilla-categorias hijos-escalonados">
+        <div class="tarjeta-categoria" data-cat="celulares">
+          <div class="categoria-icono azul">📱</div>
+          <div class="categoria-nombre">Celulares</div>
+          <div class="categoria-cantidad">4 productos</div>
         </div>
-        <div class="cat-card" data-cat="notebooks">
-          <div class="cat-icon violet">💻</div>
-          <div class="cat-name">Notebooks</div>
-          <div class="cat-count">3 productos</div>
+        <div class="tarjeta-categoria" data-cat="notebooks">
+          <div class="categoria-icono violeta">💻</div>
+          <div class="categoria-nombre">Notebooks</div>
+          <div class="categoria-cantidad">3 productos</div>
         </div>
-        <div class="cat-card" data-cat="accesorios">
-          <div class="cat-icon cyan">🎧</div>
-          <div class="cat-name">Accesorios</div>
-          <div class="cat-count">4 productos</div>
+        <div class="tarjeta-categoria" data-cat="accesorios">
+          <div class="categoria-icono cian">🎧</div>
+          <div class="categoria-nombre">Accesorios</div>
+          <div class="categoria-cantidad">4 productos</div>
         </div>
-        <div class="cat-card" data-cat="gaming">
-          <div class="cat-icon green">🎮</div>
-          <div class="cat-name">Gaming</div>
-          <div class="cat-count">3 productos</div>
+        <div class="tarjeta-categoria" data-cat="gaming">
+          <div class="categoria-icono verde">🎮</div>
+          <div class="categoria-nombre">Gaming</div>
+          <div class="categoria-cantidad">3 productos</div>
         </div>
-        <div class="cat-card" data-cat="tablets">
-          <div class="cat-icon orange">📲</div>
-          <div class="cat-name">Tablets</div>
-          <div class="cat-count">2 productos</div>
+        <div class="tarjeta-categoria" data-cat="tablets">
+          <div class="categoria-icono naranja">📲</div>
+          <div class="categoria-nombre">Tablets</div>
+          <div class="categoria-cantidad">2 productos</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="promo-banner fade-up">
-        <div class="promo-text">
-          <div class="promo-label">🔥 Oferta de la semana</div>
-          <div class="promo-title">Hasta 30% OFF<br>en Gaming</div>
-          <p class="promo-sub">PS5, Xbox, Nintendo Switch y más. Aprovechá esta semana y llevate lo mejor del gaming al precio más bajo del año.</p>
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="banner-promo subir-fade">
+        <div class="promo-texto">
+          <div class="promo-etiqueta">🔥 Oferta de la semana</div>
+          <div class="promo-titulo">Hasta 30% OFF<br>en Gaming</div>
+          <p class="promo-subtitulo">PS5, Xbox, Nintendo Switch y más. Aprovechá esta semana y llevate lo mejor del gaming al precio más bajo del año.</p>
           <br>
-          <a href="productos.html" class="btn btn-primary" style="margin-top: 8px;">Ver ofertas →</a>
+          <a href="productos.html" class="btn btn-primario" style="margin-top: 8px;">Ver ofertas →</a>
         </div>
         <div class="promo-cta">
           <span class="promo-emoji">🎮</span>
@@ -204,41 +204,41 @@
   </section>
 
   <section class="newsletter">
-    <div class="container">
-      <div class="newsletter-inner">
-        <div class="newsletter-text fade-up">
-          <span class="section-label">Comunidad</span>
-          <h2 class="section-title">Suscribite y ganá</h2>
-          <p class="section-sub">Recibí ofertas exclusivas, lanzamientos y sorteos. Más de 40.000 techlovers ya se suscribieron.</p>
+    <div class="contenedor">
+      <div class="newsletter-interno">
+        <div class="newsletter-texto subir-fade">
+          <span class="seccion-etiqueta">Comunidad</span>
+          <h2 class="seccion-titulo">Suscribite y ganá</h2>
+          <p class="seccion-subtitulo">Recibí ofertas exclusivas, lanzamientos y sorteos. Más de 40.000 techlovers ya se suscribieron.</p>
         </div>
-        <form class="newsletter-form fade-up" id="newsletter-form">
+        <form class="newsletter-formulario subir-fade" id="newsletter-formulario">
           <input class="newsletter-input" type="email" placeholder="tu@email.com" required />
-          <button type="submit" class="btn btn-primary">Suscribirse</button>
+          <button type="submit" class="btn btn-primario">Suscribirse</button>
         </form>
       </div>
     </div>
   </section>
 
-  <footer class="footer" id="contacto">
-    <div class="container">
-      <div class="footer-grid">
+  <footer class="pie-pagina" id="contacto">
+    <div class="contenedor">
+      <div class="pie-grilla">
 
-        <div class="footer-brand">
+        <div class="pie-marca">
           <a href="index.html" class="nav-logo" style="font-size:1rem;">
-            <div class="nav-logo-icon" style="width:28px;height:28px;font-size:.8rem;">⚡</div>
+            <div class="nav-logo-icono" style="width:28px;height:28px;font-size:.8rem;">⚡</div>
             NextStep Tech
           </a>
           <p>Tu tienda de tecnología de confianza. Los mejores productos, al mejor precio, con la mejor experiencia de compra.</p>
-          <div class="social-links">
-            <a href="#" class="social-btn" aria-label="Instagram">📸</a>
-            <a href="#" class="social-btn" aria-label="Facebook">👥</a>
-            <a href="#" class="social-btn" aria-label="YouTube">▶️</a>
+          <div class="enlaces-sociales">
+            <a href="#" class="btn-social" aria-label="Instagram">📸</a>
+            <a href="#" class="btn-social" aria-label="Facebook">👥</a>
+            <a href="#" class="btn-social" aria-label="YouTube">▶️</a>
           </div>
         </div>
 
         <div>
-          <div class="footer-col-title">Tienda</div>
-          <div class="footer-links">
+          <div class="pie-col-titulo">Tienda</div>
+          <div class="pie-enlaces">
             <a href="productos.html">Todos los productos</a>
             <a href="productos.html">Celulares</a>
             <a href="productos.html">Notebooks</a>
@@ -248,8 +248,8 @@
         </div>
 
         <div>
-          <div class="footer-col-title">Empresa</div>
-          <div class="footer-links">
+          <div class="pie-col-titulo">Empresa</div>
+          <div class="pie-enlaces">
             <a href="#">Sobre nosotros</a>
             <a href="#">Blog tech</a>
             <a href="#">Trabaja con nosotros</a>
@@ -258,8 +258,8 @@
         </div>
 
         <div>
-          <div class="footer-col-title">Soporte</div>
-          <div class="footer-links">
+          <div class="pie-col-titulo">Soporte</div>
+          <div class="pie-enlaces">
             <a href="#">Centro de ayuda</a>
             <a href="#">Seguimiento de pedido</a>
             <a href="#">Devoluciones</a>
@@ -272,9 +272,9 @@
 
       </div>
 
-      <div class="footer-bottom">
+      <div class="pie-inferior">
         <p>© 2026 NextStep Tech. Todos los derechos reservados.</p>
-        <div class="footer-bottom-links">
+        <div class="pie-inferior-enlaces">
           <a href="#">Privacidad</a>
           <a href="#">Términos</a>
           <a href="#">Cookies</a>
@@ -283,30 +283,30 @@
     </div>
   </footer>
 
-  <div class="cart-overlay" id="cart-overlay"></div>
-  <aside class="cart-drawer" id="cart-drawer" aria-label="Carrito">
-    <div class="cart-drawer-header">
-      <div class="cart-drawer-title">🛒 Mi carrito</div>
-      <button class="cart-close" id="cart-close-btn">✕</button>
+  <div class="carrito-overlay" id="carrito-overlay"></div>
+  <aside class="carrito-panel" id="carrito-panel" aria-label="Carrito">
+    <div class="carrito-panel-encabezado">
+      <div class="carrito-panel-titulo">🛒 Mi carrito</div>
+      <button class="carrito-cerrar" id="carrito-btn-cerrar">✕</button>
     </div>
-    <div class="cart-items" id="cart-items">
-      <div class="cart-empty">
-        <span class="cart-empty-icon">🛒</span>
+    <div class="carrito-items" id="carrito-items">
+      <div class="carrito-vacio">
+        <span class="carrito-vacio-icono">🛒</span>
         <p>Tu carrito está vacío</p>
       </div>
     </div>
-    <div class="cart-footer">
-      <div class="cart-total">
-        <span class="cart-total-label">Total</span>
-        <span class="cart-total-value" id="cart-total-value">$0</span>
+    <div class="carrito-pie">
+      <div class="carrito-total">
+        <span class="carrito-total-etiqueta">Total</span>
+        <span class="carrito-total-valor" id="carrito-total-valor">$0</span>
       </div>
-      <button class="btn btn-primary btn-checkout" onclick="showToast('¡Redirigiendo al checkout! 🎉', '🚀')">
+      <button class="btn btn-primario btn-checkout">
         Finalizar compra →
       </button>
     </div>
   </aside>
 
-  <div class="toast-container" id="toast-container"></div>
+  <div class="contenedor-toast" id="contenedor-toast"></div>
 
   <script src="../Backend/app.js"></script>
 </body>
