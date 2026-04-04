@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NextStep Tech — Catálogo completo de productos tecnológicos. Filtrá por categoría, precio y más." />
+  <title>Productos — NextStep Tech</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">⚡</div>
+        NextStep Tech
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html"     class="nav-link">Inicio</a></li>
+        <li><a href="productos.html" class="nav-link">Productos</a></li>
+        <li><a href="productos.html" class="nav-link">Ofertas</a></li>
+        <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="cart-open-btn" aria-label="Carrito">
+          🛒
+          <span class="cart-badge" style="display:none">0</span>
+        </button>
+        <div class="user-menu-wrap" id="user-menu-wrap">
+          <button class="nav-icon-btn" id="user-menu-btn" aria-label="Usuario" aria-haspopup="true" aria-expanded="false">👤</button>
+          <div class="user-menu" id="user-menu" hidden></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-title fade-up">Catálogo de productos</div>
+      <p class="page-hero-sub fade-up">Explorá nuestra selección de tecnología de última generación</p>
+    </div>
+  </section>
+
+  <div class="container products-layout">
+
+    <aside class="filters-panel">
+      <div class="filters-title">
+        Filtros
+        <button class="filters-reset" id="filters-reset">Limpiar</button>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-group-title">Buscar</div>
+        <div class="search-input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input
+            type="search"
+            class="filter-search"
+            id="filter-search"
+            placeholder="Ej: iPhone, MacBook…"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-group-title">Categoría</div>
+        <div class="cat-chips">
+          <div class="cat-chip active" data-cat="todos">
+            Todos
+            <span class="cat-chip-count">16</span>
+          </div>
+          <div class="cat-chip" data-cat="celulares">
+            📱 Celulares
+            <span class="cat-chip-count">4</span>
+          </div>
+          <div class="cat-chip" data-cat="notebooks">
+            💻 Notebooks
+            <span class="cat-chip-count">3</span>
+          </div>
+          <div class="cat-chip" data-cat="accesorios">
+            🎧 Accesorios
+            <span class="cat-chip-count">4</span>
+          </div>
+          <div class="cat-chip" data-cat="gaming">
+            🎮 Gaming
+            <span class="cat-chip-count">3</span>
+          </div>
+          <div class="cat-chip" data-cat="tablets">
+            📲 Tablets
+            <span class="cat-chip-count">2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-group-title">Precio máximo</div>
+        <div class="price-slider-wrap">
+          <div class="price-range-display">
+            Hasta <span id="price-display">$2,500</span>
+          </div>
+          <input
+            type="range"
+            class="range-input"
+            id="price-range"
+            min="50"
+            max="2500"
+            step="50"
+            value="2500"
+          />
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <div class="filter-group-title">Ordenar por</div>
+        <select class="sort-select" id="sort-select">
+          <option value="default">Relevancia</option>
+          <option value="price-asc">Precio: menor a mayor</option>
+          <option value="price-desc">Precio: mayor a menor</option>
+          <option value="rating">Mejor puntuados</option>
+        </select>
+      </div>
+    </aside>
+
+    <main class="products-main">
+      <div class="products-topbar">
+        <span class="products-count" id="products-count">
+          <strong>16</strong> productos encontrados
+        </span>
+        <div class="view-toggle">
+          <button class="view-btn active" data-view="grid" title="Vista en grilla">⊞</button>
+          <button class="view-btn" data-view="list" title="Vista en lista">☰</button>
+        </div>
+      </div>
+
+      <div class="products-grid stagger-children" id="products-grid">
+        <!-- Populated by JS -->
+      </div>
+    </main>
+  </div>
+
+  <footer class="footer" id="contacto">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="font-size:1rem;">
+            <div class="nav-logo-icon" style="width:28px;height:28px;font-size:.8rem;">⚡</div>
+            NextStep Tech
+          </a>
+          <p>Tu tienda de tecnología de confianza. Los mejores productos, al mejor precio, con la mejor experiencia de compra.</p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+            <a href="#" class="social-btn" aria-label="Twitter">🐦</a>
+            <a href="#" class="social-btn" aria-label="Facebook">👥</a>
+            <a href="#" class="social-btn" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Tienda</div>
+          <div class="footer-links">
+            <a href="productos.html">Todos los productos</a>
+            <a href="productos.html">Celulares</a>
+            <a href="productos.html">Notebooks</a>
+            <a href="productos.html">Accesorios</a>
+            <a href="productos.html">Gaming</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Empresa</div>
+          <div class="footer-links">
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Blog tech</a>
+            <a href="#">Trabaja con nosotros</a>
+            <a href="#">Prensa</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Soporte</div>
+          <div class="footer-links">
+            <a href="#">Centro de ayuda</a>
+            <a href="#">Seguimiento de pedido</a>
+            <a href="#">Devoluciones</a>
+            <a href="#">Garantías</a>
+            <a href="https://wa.me/541167306257" target="_blank" rel="noopener noreferrer">
+              WhatsApp: +54 11 6730-6257
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 NextStep Tech. Todos los derechos reservados.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacidad</a>
+          <a href="#">Términos</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Carrito">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">🛒 Mi carrito</div>
+      <button class="cart-close" id="cart-close-btn">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items">
+      <div class="cart-empty">
+        <span class="cart-empty-icon">🛒</span>
+        <p>Tu carrito está vacío</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label">Total</span>
+        <span class="cart-total-value" id="cart-total-value">$0</span>
+      </div>
+      <button class="btn btn-primary btn-checkout" onclick="showToast('¡Redirigiendo al checkout! 🎉', '🚀')">
+        Finalizar compra →
+      </button>
+    </div>
+  </aside>
+
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="../Backend/app.js"></script>
+</body>
+</html>
