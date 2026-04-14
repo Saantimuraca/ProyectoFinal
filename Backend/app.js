@@ -5,8 +5,8 @@ const IMAGENES = [];
 
 async function cargarDatosIniciales() {
   const [respuestaProductos, respuestaImagenes] = await Promise.all([
-    fetch('../Backend/productos.json'),
-    fetch('../Backend/imagenes.json')
+    fetch('./Backend/productos.json'),
+    fetch('./Backend/imagenes.json')
   ]);
 
   if (!respuestaProductos.ok) {
@@ -542,10 +542,10 @@ function iniciarMenuUsuario() {
 function normalizarRutaImagen(ruta) {
   return ruta
     .replace(/\\/g, '/')
-    .replace('../imagenes_productos/', '../ImagenesProductos/')
-    .replace('../Imagenes_productos/', '../ImagenesProductos/')
-    .replace('../imagenesProductos/', '../ImagenesProductos/')
-    .replace('../imagenesproductos/', '../ImagenesProductos/');
+    .replace('./imagenes_productos/', '../ImagenesProductos/')
+    .replace('./Imagenes_productos/', '../ImagenesProductos/')
+    .replace('./imagenesProductos/', '../ImagenesProductos/')
+    .replace('./imagenesproductos/', '../ImagenesProductos/');
 }
 
 function inicializarMapaImagenes() {
