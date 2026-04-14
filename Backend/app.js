@@ -542,10 +542,10 @@ function iniciarMenuUsuario() {
 function normalizarRutaImagen(ruta) {
   return ruta
     .replace(/\\/g, '/')
-    .replace('./imagenes_productos/', '../ImagenesProductos/')
-    .replace('./Imagenes_productos/', '../ImagenesProductos/')
-    .replace('./imagenesProductos/', '../ImagenesProductos/')
-    .replace('./imagenesproductos/', '../ImagenesProductos/');
+    .replace('./imagenes_productos/', './ImagenesProductos/')
+    .replace('./Imagenes_productos/', './ImagenesProductos/')
+    .replace('./imagenesProductos/', './ImagenesProductos/')
+    .replace('./imagenesproductos/', './ImagenesProductos/');
 }
 
 function inicializarMapaImagenes() {
