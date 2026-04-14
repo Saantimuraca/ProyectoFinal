@@ -1,43 +1,41 @@
-const PRODUCTOS = [
-  { id: 1, nombre: 'iPhone 15 Pro Max', categoria: 'celulares', precio: 1499, precioOriginal: 1699, badge: 'oferta', calificacion: 4.9, resenas: 342 },
-  { id: 2, nombre: 'Samsung Galaxy S24 Ultra', categoria: 'celulares', precio: 1349, precioOriginal: null, badge: 'nuevo', calificacion: 4.8, resenas: 218 },
-  { id: 3, nombre: 'MacBook Pro 14" M3', categoria: 'notebooks', precio: 1999, precioOriginal: 2199, badge: 'oferta', calificacion: 4.9, resenas: 504 },
-  { id: 4, nombre: 'Dell XPS 15 OLED', categoria: 'notebooks', precio: 1699, precioOriginal: null, badge: null, calificacion: 4.7, resenas: 189 },
-  { id: 5, nombre: 'AirPods Pro 2nd Gen', categoria: 'accesorios', precio: 249, precioOriginal: 299, badge: 'oferta', calificacion: 4.8, resenas: 912 },
-  { id: 6, nombre: 'Logitech MX Master 3S', categoria: 'accesorios', precio: 99, precioOriginal: null, badge: null, calificacion: 4.8, resenas: 456 },
-  { id: 7, nombre: 'iPad Pro 12.9" M4', categoria: 'tablets', precio: 1099, precioOriginal: 1199, badge: 'nuevo', calificacion: 4.9, resenas: 427 },
-  { id: 8, nombre: 'ASUS ROG Zephyrus G14', categoria: 'notebooks', precio: 1599, precioOriginal: null, badge: 'nuevo', calificacion: 4.7, resenas: 321 },
-  { id: 9, nombre: 'Nintendo Switch OLED', categoria: 'gaming', precio: 349, precioOriginal: null, badge: null, calificacion: 4.8, resenas: 2341 },
-  { id: 10, nombre: 'Apple Watch Series 9', categoria: 'accesorios', precio: 399, precioOriginal: 449, badge: 'oferta', calificacion: 4.8, resenas: 761 },
-  { id: 11, nombre: 'Sony WH-1000XM5', categoria: 'accesorios', precio: 349, precioOriginal: null, badge: null, calificacion: 4.7, resenas: 842 }
-];
+const PRODUCTOS = [];
+let PRODUCTOS_UI = [];
 
-const IMAGENES = [
-  { idProducto: 1, ruta: '../imagenes_productos/Iphone15ProMax_1.png' },
-  { idProducto: 1, ruta: '../imagenes_productos/Iphone15ProMax_2.png' },
-  { idProducto: 1, ruta: '../imagenes_productos/Iphone15ProMax_3.png' },
-  { idProducto: 2, ruta: '../imagenes_productos/Screenshot_1.png' },
-  { idProducto: 3, ruta: '../imagenes_productos/Screenshot_2.png' },
-  { idProducto: 3, ruta: '../imagenes_productos/Screenshot_3.png' },
-  { idProducto: 4, ruta: '../imagenes_productos/Screenshot_4.png' },
-  { idProducto: 4, ruta: '../imagenes_productos/Screenshot_5.png' },
-  { idProducto: 4, ruta: '../imagenes_productos/Screenshot_6.png' },
-  { idProducto: 4, ruta: '../imagenes_productos/Screenshot_7.png' },
-  { idProducto: 5, ruta: '../imagenes_productos/Screenshot_8.png' },
-  { idProducto: 5, ruta: '../imagenes_productos/Screenshot_9.png' },
-  { idProducto: 6, ruta: '../imagenes_productos/Screenshot_10.png' },
-  { idProducto: 6, ruta: '../imagenes_productos/Screenshot_11.png' },
-  { idProducto: 7, ruta: '../imagenes_productos/Screenshot_12.png' },
-  { idProducto: 8, ruta: '../imagenes_productos/Screenshot_13.png' },
-  { idProducto: 8, ruta: '../imagenes_productos/Screenshot_14.png' },
-  { idProducto: 8, ruta: '../imagenes_productos/Screenshot_15.png' },
-  { idProducto: 9, ruta: '../imagenes_productos/Screenshot_16.png' },
-  { idProducto: 9, ruta: '../imagenes_productos/Screenshot_17.png' },
-  { idProducto: 9, ruta: '../imagenes_productos/Screenshot_18.png' },
-  { idProducto: 10, ruta: '../imagenes_productos/Screenshot_19.png' },
-  { idProducto: 11, ruta: '../imagenes_productos/Screenshot_20.png' },
-  { idProducto: 11, ruta: '../imagenes_productos/Screenshot_21.png' }
-];
+const IMAGENES = [];
+
+async function cargarDatosIniciales() {
+  const [respuestaProductos, respuestaImagenes] = await Promise.all([
+    fetch('../Backend/productos.json'),
+    fetch('../Backend/imagenes.json')
+  ]);
+
+  if (!respuestaProductos.ok) {
+    throw new Error(`No se pudo cargar productos.json: ${respuestaProductos.status}`);
+  }
+
+  if (!respuestaImagenes.ok) {
+    throw new Error(`No se pudo cargar imagenes.json: ${respuestaImagenes.status}`);
+  }
+
+  const productos = await respuestaProductos.json();
+  const imagenes = await respuestaImagenes.json();
+
+  PRODUCTOS.push(...productos);
+  IMAGENES.push(...imagenes);
+
+  PRODUCTOS_UI = PRODUCTOS.map(producto => ({
+    id: producto.id,
+    nombre: producto.nombre,
+    categoria: producto.categoria,
+    precio: producto.precio,
+    precioOriginal: producto.precioOriginal,
+    badge: producto.badge,
+    calificacion: producto.calificacion,
+    resenas: producto.resenas,
+    emoji: EMOJI_FALLBACK[producto.categoria] || '📦'
+  }));
+}
+
 
 const EMOJI_FALLBACK = {
   celulares: '📱',
@@ -573,18 +571,6 @@ function obtenerEtiquetaCategoria(categoria) {
   return etiquetas[categoria] || categoria;
 }
 
-const PRODUCTOS_UI = PRODUCTOS.map(producto => ({
-  id: producto.id,
-  nombre: producto.nombre,
-  categoria: producto.categoria,
-  precio: producto.precio,
-  precioOriginal: producto.precioOriginal,
-  badge: producto.badge,
-  calificacion: producto.calificacion,
-  resenas: producto.resenas,
-  emoji: EMOJI_FALLBACK[producto.categoria] || '📦'
-}));
-
 function cargarCarrito() {
   const crudo = localStorage.getItem('nst_carrito');
   if (!crudo) return;
@@ -1021,25 +1007,30 @@ window.eliminarDelCarrito = eliminarDelCarrito;
 window.mostrarToast = mostrarToast;
 window.cambiarImagenProducto = cambiarImagenProducto;
 
-document.addEventListener('DOMContentLoaded', () => {
-  inicializarMapaImagenes();
-  cargarCarrito();
-  cargarSesion();
-  iniciarNavbar();
-  iniciarMenuUsuario();
-  iniciarAnimaciones();
-  iniciarImagenesHeroFlotantes();
-  actualizarUICarrito();
-  renderizarProductosDestacados();
-  actualizarCantidadesCategoriasInicio();
-  iniciarTarjetasCategorias();
-  iniciarNewsletter();
-  iniciarBotonCheckout();
-  document.getElementById('carrito-btn-abrir')?.addEventListener('click', abrirCarrito);
-  document.getElementById('carrito-btn-cerrar')?.addEventListener('click', cerrarCarrito);
-  document.getElementById('carrito-overlay')?.addEventListener('click', cerrarCarrito);
-  if (document.getElementById('grilla-productos')) iniciarPaginaProductos();
-  document.getElementById('hero-cta')?.addEventListener('click', () => {
-    window.location.href = 'productos.html';
-  });
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    await cargarDatosIniciales();
+    inicializarMapaImagenes();
+    cargarCarrito();
+    cargarSesion();
+    iniciarNavbar();
+    iniciarMenuUsuario();
+    iniciarAnimaciones();
+    iniciarImagenesHeroFlotantes();
+    actualizarUICarrito();
+    renderizarProductosDestacados();
+    actualizarCantidadesCategoriasInicio();
+    iniciarTarjetasCategorias();
+    iniciarNewsletter();
+    iniciarBotonCheckout();
+    document.getElementById('carrito-btn-abrir')?.addEventListener('click', abrirCarrito);
+    document.getElementById('carrito-btn-cerrar')?.addEventListener('click', cerrarCarrito);
+    document.getElementById('carrito-overlay')?.addEventListener('click', cerrarCarrito);
+    if (document.getElementById('grilla-productos')) iniciarPaginaProductos();
+    document.getElementById('hero-cta')?.addEventListener('click', () => {
+      window.location.href = 'productos.html';
+    });
+  } catch (error) {
+    console.error('Error al inicializar la tienda:', error);
+  }
 });

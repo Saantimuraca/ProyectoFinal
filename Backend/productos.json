@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "nombre": "iPhone 15 Pro Max",
+    "categoria": "celulares",
+    "precio": 1499,
+    "precioOriginal": 1699,
+    "badge": "oferta",
+    "calificacion": 4.9,
+    "resenas": 342
+  },
+  {
+    "id": 2,
+    "nombre": "Samsung Galaxy S24 Ultra",
+    "categoria": "celulares",
+    "precio": 1349,
+    "precioOriginal": null,
+    "badge": "nuevo",
+    "calificacion": 4.8,
+    "resenas": 218
+  },
+  {
+    "id": 3,
+    "nombre": "MacBook Pro 14\" M3",
+    "categoria": "notebooks",
+    "precio": 1999,
+    "precioOriginal": 2199,
+    "badge": "oferta",
+    "calificacion": 4.9,
+    "resenas": 504
+  },
+  {
+    "id": 4,
+    "nombre": "Dell XPS 15 OLED",
+    "categoria": "notebooks",
+    "precio": 1699,
+    "precioOriginal": null,
+    "badge": null,
+    "calificacion": 4.7,
+    "resenas": 189
+  },
+  {
+    "id": 5,
+    "nombre": "AirPods Pro 2nd Gen",
+    "categoria": "accesorios",
+    "precio": 249,
+    "precioOriginal": 299,
+    "badge": "oferta",
+    "calificacion": 4.8,
+    "resenas": 912
+  },
+  {
+    "id": 6,
+    "nombre": "Logitech MX Master 3S",
+    "categoria": "accesorios",
+    "precio": 99,
+    "precioOriginal": null,
+    "badge": null,
+    "calificacion": 4.8,
+    "resenas": 456
+  },
+  {
+    "id": 7,
+    "nombre": "iPad Pro 12.9\" M4",
+    "categoria": "tablets",
+    "precio": 1099,
+    "precioOriginal": 1199,
+    "badge": "nuevo",
+    "calificacion": 4.9,
+    "resenas": 427
+  },
+  {
+    "id": 8,
+    "nombre": "ASUS ROG Zephyrus G14",
+    "categoria": "notebooks",
+    "precio": 1599,
+    "precioOriginal": null,
+    "badge": "nuevo",
+    "calificacion": 4.7,
+    "resenas": 321
+  },
+  {
+    "id": 9,
+    "nombre": "Nintendo Switch OLED",
+    "categoria": "gaming",
+    "precio": 349,
+    "precioOriginal": null,
+    "badge": null,
+    "calificacion": 4.8,
+    "resenas": 2341
+  },
+  {
+    "id": 10,
+    "nombre": "Apple Watch Series 9",
+    "categoria": "accesorios",
+    "precio": 399,
+    "precioOriginal": 449,
+    "badge": "oferta",
+    "calificacion": 4.8,
+    "resenas": 761
+  },
+  {
+    "id": 11,
+    "nombre": "Sony WH-1000XM5",
+    "categoria": "accesorios",
+    "precio": 349,
+    "precioOriginal": null,
+    "badge": null,
+    "calificacion": 4.7,
+    "resenas": 842
+  }
+]
